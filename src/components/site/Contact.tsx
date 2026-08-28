@@ -6,7 +6,14 @@ export function Contact() {
       <h2 className="font-heading text-xl font-bold tracking-tight">
         Get in touch
       </h2>
-      <p className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+      <p className="mt-3 max-w-2xl">
+        Open to roles in SAP / financial systems, finance analytics, or data
+        engineering.
+      </p>
+      <p className="mt-2 font-mono text-xs text-ink-soft">
+        Chicago area · open to hybrid or remote
+      </p>
+      <p className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
         <a
           href={`mailto:${links.email}`}
           className="font-medium underline decoration-rule underline-offset-4 hover:decoration-foreground"

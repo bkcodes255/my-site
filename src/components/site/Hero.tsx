@@ -15,7 +15,7 @@ export function Hero() {
 
       <div
         role="img"
-        aria-label="Ledger entry: Debit, finance and audit — CPA (T), SAP FI, four years accounts payable and audit. Credit, data and build — Python, SQL, machine learning, Claude Code. Balance: the same person does both. Balanced."
+        aria-label="Ledger entry: Debit, finance and audit — CPA (T), SAP FI, four years accounts payable and audit. Credit, data and build — Python, SQL, PostgreSQL. Balance: the same person does both. Balanced."
         className="mt-10 overflow-x-auto rounded-md border border-rule bg-card px-5 py-4 font-mono text-sm tabular-figures sm:text-base"
       >
         <div
@@ -34,7 +34,7 @@ export function Hero() {
           <span className="w-8 shrink-0 text-verified">CR</span>
           <span className="shrink-0">Data &amp; build</span>
           <span className="flex-1 border-b border-dotted border-rule" aria-hidden />
-          <span className="shrink-0 text-ink-soft">Python · SQL · ML · Claude Code</span>
+          <span className="shrink-0 text-ink-soft">Python · SQL · PostgreSQL</span>
         </div>
         <div className="my-3 border-t border-rule" aria-hidden />
         <div

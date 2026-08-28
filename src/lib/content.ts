@@ -71,48 +71,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    code: "ENTRY-FPL",
-    title: "Fergie's Regression",
-    status: "VERIFIED",
-    summary:
-      "A full decision pipeline for Fantasy Premier League: ingests live data, predicts player points, optimizes transfers and squad selection under FPL's actual constraints, then backtests every decision against a real season.",
-    stats: [
-      { label: "Transfer engine vs. static squad", value: "+346 pts/season" },
-      { label: "Model R²", value: "0.320" },
-      { label: "Squad optimizer", value: "<1s (MILP)" },
-      { label: "Monte Carlo runs", value: "10,000" },
-    ],
-    detail:
-      "Backtested on the full 2025-26 season: the decision engine beat a static squad by 346 points — more than perfect weekly captaincy alone would have gained.",
-    tech: ["Python", "PostgreSQL", "XGBoost", "PuLP", "Streamlit", "Claude Code"],
-    link: {
-      label: "View on GitHub",
-      href: "https://github.com/bkcodes255/fergies-regression",
-    },
-    story: [
-      {
-        label: "The problem",
-        text: "Every Fantasy Premier League decision — who to captain, who to transfer, when to take a hit — was getting made on vibes. A few seasons of finishing mid-table made it obvious gut instinct wasn't beating the noise.",
-      },
-      {
-        label: "Why it mattered",
-        text: "I've followed the Premier League since I was a kid, and FPL turned that into a weekly competition against friends. I wanted to know, for real, whether a disciplined model-driven process could beat instinct over a full season — not on a holdout set, against the actual 2025-26 fixtures.",
-      },
-      {
-        label: "The approach",
-        text: "Treat it as a decision pipeline, not a prediction contest: ingest live data, forecast points with a model that admits its own uncertainty, then hand those forecasts to an optimizer that respects FPL's real constraints — budget, squad composition, one captain, limited free transfers. Backtest every decision against what actually happened.",
-      },
-      {
-        label: "Building it",
-        text: "An XGBoost model predicts player points (R² 0.320); a Monte Carlo layer runs 10,000 simulations per gameweek to price in variance; a MILP solver (PuLP) picks the optimal squad and transfers in under a second. Injury and fixture-congestion signal is engineered as a volatility feature, but it isn't folded into the quantile models yet. I built this with Claude Code end to end, including chasing down a real static-artifact-path bug that was quietly breaking the deployed dashboard.",
-      },
-      {
-        label: "The result",
-        text: "Backtested on the full 2025-26 season, the decision engine beat a static squad by 346 points — more than perfect weekly captaincy alone would have gained.",
-      },
-    ],
-  },
-  {
     code: "ENTRY-BRMK",
     title: "BRMK Ops Platform",
     status: "AUDITED",
@@ -168,6 +126,48 @@ export const projects: Project[] = [
       label: "View configuration log",
       href: "/work/sap-fi-configuration",
     },
+  },
+  {
+    code: "ENTRY-FPL",
+    title: "Fergie's Regression",
+    status: "VERIFIED",
+    summary:
+      "A full decision pipeline for Fantasy Premier League: ingests live data, predicts player points, optimizes transfers and squad selection under FPL's actual constraints, then backtests every decision against a real season.",
+    stats: [
+      { label: "Transfer engine vs. static squad", value: "+346 pts/season" },
+      { label: "Model R²", value: "0.320" },
+      { label: "Squad optimizer", value: "<1s (MILP)" },
+      { label: "Monte Carlo runs", value: "10,000" },
+    ],
+    detail:
+      "Backtested on the full 2025-26 season: the decision engine beat a static squad by 346 points — more than perfect weekly captaincy alone would have gained.",
+    tech: ["Python", "PostgreSQL", "XGBoost", "PuLP", "Streamlit", "Claude Code"],
+    link: {
+      label: "View on GitHub",
+      href: "https://github.com/bkcodes255/fergies-regression",
+    },
+    story: [
+      {
+        label: "The problem",
+        text: "Every Fantasy Premier League decision — who to captain, who to transfer, when to take a hit — was getting made on vibes. A few seasons of finishing mid-table made it obvious gut instinct wasn't beating the noise.",
+      },
+      {
+        label: "Why it mattered",
+        text: "I've followed the Premier League since I was a kid, and FPL turned that into a weekly competition against friends. I wanted to know, for real, whether a disciplined model-driven process could beat instinct over a full season — not on a holdout set, against the actual 2025-26 fixtures.",
+      },
+      {
+        label: "The approach",
+        text: "Treat it as a decision pipeline, not a prediction contest: ingest live data, forecast points with a model that admits its own uncertainty, then hand those forecasts to an optimizer that respects FPL's real constraints — budget, squad composition, one captain, limited free transfers. Backtest every decision against what actually happened.",
+      },
+      {
+        label: "Building it",
+        text: "An XGBoost model predicts player points (R² 0.320); a Monte Carlo layer runs 10,000 simulations per gameweek to price in variance; a MILP solver (PuLP) picks the optimal squad and transfers in under a second. Injury and fixture-congestion signal is engineered as a volatility feature, but it isn't folded into the quantile models yet. I built this with Claude Code end to end, including chasing down a real static-artifact-path bug that was quietly breaking the deployed dashboard.",
+      },
+      {
+        label: "The result",
+        text: "Backtested on the full 2025-26 season, the decision engine beat a static squad by 346 points — more than perfect weekly captaincy alone would have gained.",
+      },
+    ],
   },
 ];
 
