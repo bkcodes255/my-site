@@ -8,9 +8,9 @@ export function Hero() {
         className="ledger-line mt-4 font-heading text-4xl leading-[1.1] font-bold tracking-tight sm:text-5xl"
         style={{ animationDelay: "80ms" }}
       >
-        I close the books.
+        I build systems that have to balance.
         <br />
-        Then I build the system that closes them faster.
+        Literally.
       </h1>
 
       <div
