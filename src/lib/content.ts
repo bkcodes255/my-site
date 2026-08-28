@@ -104,7 +104,7 @@ export const projects: Project[] = [
       },
       {
         label: "Building it",
-        text: "An XGBoost model predicts player points (R² 0.320); a Monte Carlo layer runs 10,000 simulations per gameweek to price in variance; a MILP solver (PuLP) picks the optimal squad and transfers in under a second. Injury and fixture-congestion signal is engineered as a volatility feature but not yet folded into the quantile models — an open item, not a finished one. I built this with Claude Code end to end, including chasing down a real static-artifact-path bug that was quietly breaking the deployed dashboard.",
+        text: "An XGBoost model predicts player points (R² 0.320); a Monte Carlo layer runs 10,000 simulations per gameweek to price in variance; a MILP solver (PuLP) picks the optimal squad and transfers in under a second. Injury and fixture-congestion signal is engineered as a volatility feature, but it isn't folded into the quantile models yet. I built this with Claude Code end to end, including chasing down a real static-artifact-path bug that was quietly breaking the deployed dashboard.",
       },
       {
         label: "The result",
@@ -139,7 +139,7 @@ export const projects: Project[] = [
       },
       {
         label: "Why it mattered",
-        text: "This wasn't an abstract systems-design exercise — it's family. The people depending on this ledger being right are people I know, and my own background in accounts payable and audit (TotalEnergies, Shrewd & Associates) meant I could see exactly where the risk lived: unreconciled accounts, approvals with no trail, access that wasn't actually scoped to role.",
+        text: "It's family. The people depending on this ledger being right are people I know, and my own background in accounts payable and audit (TotalEnergies, Shrewd & Associates) meant I could see exactly where the risk lived: unreconciled accounts, approvals with no trail, access that wasn't actually scoped to role.",
       },
       {
         label: "The approach",
