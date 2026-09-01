@@ -78,19 +78,26 @@ export default function SapConfigPage() {
                     <td className="py-2 align-top">
                       {entry.config}
                       {"screenshots" in entry && entry.screenshots && (
-                        <div className="mt-3 mb-1 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                        <div className="mt-3 mb-1 grid grid-cols-1 gap-2 sm:grid-cols-2">
                           {entry.screenshots.map((shot) => (
                             <figure
                               key={shot.src}
                               className="overflow-hidden border border-rule bg-background"
                             >
-                              <Image
-                                src={shot.src}
-                                alt={shot.caption}
-                                width={1600}
-                                height={900}
-                                className="h-auto w-full"
-                              />
+                              <a
+                                href={shot.src}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Open full-size screenshot: ${shot.caption}`}
+                              >
+                                <Image
+                                  src={shot.src}
+                                  alt={shot.caption}
+                                  width={1600}
+                                  height={900}
+                                  className="h-auto w-full cursor-zoom-in"
+                                />
+                              </a>
                               <figcaption className="border-t border-rule px-2 py-1.5 text-xs text-ink-soft">
                                 {shot.caption}
                               </figcaption>
