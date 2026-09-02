@@ -160,7 +160,7 @@ export const projects: Project[] = [
     story: [
       {
         label: "The name",
-        text: "Manchester United, through and through — Sir Alex Ferguson is the standard I measure every manager against: 38 trophies in 26 years, three different title-winning sides rebuilt without ever losing the plot. \"Fergie's Regression\" is a straight tribute to him, attached to a project trying to bring some of that same discipline to a game most people just play on vibes.",
+        text: "I'm Manchester United through and through. Sir Alex Ferguson is the standard I measure every manager against: 38 trophies in 26 years, three different title-winning sides rebuilt without ever losing the plot. \"Fergie's Regression\" is named for him, a tribute built into a project that's trying to bring some of that same discipline to how I play FPL.",
       },
       {
         label: "The problem",
@@ -168,7 +168,7 @@ export const projects: Project[] = [
       },
       {
         label: "Why it mattered",
-        text: "This is a passion project, not a job for anyone — I've followed the Premier League since I was a kid, and FPL turned that into a weekly competition against friends. The real goal is using data analytics and machine learning to get genuinely good at predictive analytics: build a model that predicts player performance with as little margin of error as realistically achievable, then prove it by seeing whether a disciplined model-driven process could beat instinct over a full season — not on a holdout set, against the actual 2025-26 fixtures.",
+        text: "This is a passion project, not a job. I've followed the Premier League since I was a kid, and FPL turned that into a weekly competition against friends. The real goal is predictive analytics: using data and machine learning to build a model that predicts player performance with as little error as I can manage. Proving it means testing whether a disciplined, model-driven process beats instinct over a full season, against the real 2025-26 fixtures, not a holdout set.",
       },
       {
         label: "The approach",
