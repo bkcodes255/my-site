@@ -6,7 +6,7 @@ export const experience = [
     place: "Jonesboro, AR",
     bullets: [
       "Extracted, compiled, and validated research data for faculty at the Griffin Graduate Program using statistical tools.",
-      "Supported Graduate Business Fundamentals and Corporate Finance courses — proctoring, grading, and academic performance reporting.",
+      "Supported Graduate Business Fundamentals and Corporate Finance courses: proctoring, grading, and academic performance reporting.",
     ],
   },
   {
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     title: "BRMK Ops Platform",
     status: "AUDITED",
     summary:
-      "Financial operations system for a family-owned microfinance lender: a React front end — PKCE auth with role-based routing — over a governed Postgres/Supabase backend where postings are double-entry and must balance, approvals go through a maker-checker flow, and access is enforced by row-level security.",
+      "Financial operations system for a family-owned microfinance lender: a React front end (PKCE auth with role-based routing) over a governed Postgres/Supabase backend where postings are double-entry and must balance, approvals go through a maker-checker flow, and access is enforced by row-level security.",
     stats: [
       { label: "GL engine", value: "double-entry, balance-asserted" },
       { label: "Front end", value: "React + Vite" },
@@ -85,7 +85,7 @@ export const projects: Project[] = [
       { label: "Access control", value: "RLS by role" },
     ],
     detail:
-      "This repo covers only the schema, migration, and reporting layer — synthetic data, no production code. The live webapp (Dashboard and Borrower-register screens shipped; loan origination and repayments in progress) stays private.",
+      "This repo covers only the schema, migration, and reporting layer: synthetic data, no production code. The live webapp (Dashboard and Borrower-register screens shipped; loan origination and repayments in progress) stays private.",
     tech: ["React", "TypeScript", "Supabase / PostgreSQL", "PL/pgSQL", "Claude Code"],
     links: [
       {
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     story: [
       {
         label: "The problem",
-        text: "A family-owned microfinance lender was running its general ledger the way a lot of small lenders do — spreadsheets, manual reconciliation, and trust that nobody would push a posting through without a second set of eyes. That trust doesn't hold at scale, and it doesn't survive an audit.",
+        text: "A family-owned microfinance lender was running its general ledger the way a lot of small lenders do: spreadsheets, manual reconciliation, and trust that nobody would push a posting through without a second set of eyes. That trust doesn't hold at scale, and it doesn't survive an audit.",
       },
       {
         label: "Why it mattered",
@@ -108,7 +108,7 @@ export const projects: Project[] = [
       },
       {
         label: "Building it",
-        text: "A 23-table schema across 6 domains, PL/pgSQL enforcing the balance and classification rules at the database layer, row-level security scoping access by role, and a React/Vite front end with PKCE auth. I built the schema, migrations, and reporting layer with Claude Code — this repo is the sanitized version; the live webapp (Dashboard and Borrower-register screens shipped, loan origination and repayments in progress) stays private because it's a real institution's data.",
+        text: "A 23-table schema across 6 domains, PL/pgSQL enforcing the balance and classification rules at the database layer, row-level security scoping access by role, and a React/Vite front end with PKCE auth. I built the schema, migrations, and reporting layer with Claude Code. This repo is the sanitized version; the live webapp (Dashboard and Borrower-register screens shipped, loan origination and repayments in progress) stays private because it's a real institution's data.",
       },
     ],
   },
@@ -117,7 +117,7 @@ export const projects: Project[] = [
     title: "S/4HANA FI Configuration",
     status: "IN PROGRESS",
     summary:
-      "Structured configuration notes across SAP's FI customizing path — company codes, master data governance, document control, posting control, and clearing — built while working through S4F10 (Business Processes in Financial Accounting) and S4F12 (Customizing FI: General Ledger, Accounts Payable, Accounts Receivable) toward the SAP Certified Associate exam (C_TS4FI).",
+      "Structured configuration notes across SAP's FI customizing path: company codes, master data governance, document control, posting control, and clearing. I wrote them while working through S4F10 (Business Processes in Financial Accounting) and S4F12 (Customizing FI: General Ledger, Accounts Payable, Accounts Receivable) toward the SAP Certified Associate exam (C_TS4FI).",
     stats: [
       { label: "S4F10", value: "complete" },
       { label: "S4F12", value: "in progress, 6 units / 28 exercises" },
@@ -145,7 +145,7 @@ export const projects: Project[] = [
       { label: "Monte Carlo runs", value: "10,000" },
     ],
     detail:
-      "Backtested on the full 2025-26 season: the decision engine beat a static squad by 346 points — more than perfect weekly captaincy alone would have gained.",
+      "Backtested on the full 2025-26 season: the decision engine beat a static squad by 346 points, more than perfect weekly captaincy alone would have gained.",
     tech: ["Python", "PostgreSQL", "XGBoost", "PuLP", "Streamlit", "Claude Code"],
     links: [
       {
@@ -164,7 +164,7 @@ export const projects: Project[] = [
       },
       {
         label: "The problem",
-        text: "Every Fantasy Premier League decision — who to captain, who to transfer, when to take a hit — was getting made on vibes. A few seasons of finishing mid-table made it obvious gut instinct wasn't beating the noise.",
+        text: "Every Fantasy Premier League decision (who to captain, who to transfer, when to take a hit) was getting made on vibes. A few seasons of finishing mid-table made it obvious gut instinct wasn't beating the noise.",
       },
       {
         label: "Why it mattered",
@@ -172,7 +172,7 @@ export const projects: Project[] = [
       },
       {
         label: "The approach",
-        text: "Treat it as a decision pipeline, not a prediction contest: ingest live data, forecast points with a model that admits its own uncertainty, then hand those forecasts to an optimizer that respects FPL's real constraints — budget, squad composition, one captain, limited free transfers. Backtest every decision against what actually happened.",
+        text: "Treat it as a decision pipeline, not a prediction contest: ingest live data, forecast points with a model that admits its own uncertainty, then hand those forecasts to an optimizer that respects FPL's real constraints (budget, squad composition, one captain, limited free transfers). Backtest every decision against what actually happened.",
       },
       {
         label: "Building it",
@@ -180,7 +180,7 @@ export const projects: Project[] = [
       },
       {
         label: "The result",
-        text: "Backtested on the full 2025-26 season, the decision engine beat a static squad by 346 points — more than perfect weekly captaincy alone would have gained.",
+        text: "Backtested on the full 2025-26 season, the decision engine beat a static squad by 346 points, more than perfect weekly captaincy alone would have gained.",
       },
     ],
   },
