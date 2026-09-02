@@ -54,16 +54,21 @@ export function ProjectEntry({ project }: { project: Project }) {
             </li>
           ))}
         </ul>
-        {project.link && (
-          <a
-            href={project.link.href}
-            {...(project.link.href.startsWith("http")
-              ? { target: "_blank", rel: "noopener noreferrer" }
-              : {})}
-            className="text-sm font-medium text-verified underline decoration-verified/40 underline-offset-4 transition-colors hover:decoration-verified"
-          >
-            {project.link.label} →
-          </a>
+        {project.links && project.links.length > 0 && (
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            {project.links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                {...(link.href.startsWith("http")
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+                className="text-sm font-medium text-verified underline decoration-verified/40 underline-offset-4 transition-colors hover:decoration-verified"
+              >
+                {link.label} →
+              </a>
+            ))}
+          </div>
         )}
       </div>
     </article>

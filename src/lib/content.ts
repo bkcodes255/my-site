@@ -66,7 +66,7 @@ export type Project = {
   stats: { label: string; value: string }[];
   detail?: string;
   tech: string[];
-  link?: { label: string; href: string; note?: string };
+  links?: { label: string; href: string; note?: string }[];
   story?: StoryBeat[];
 };
 
@@ -87,10 +87,12 @@ export const projects: Project[] = [
     detail:
       "This repo covers only the schema, migration, and reporting layer — synthetic data, no production code. The live webapp (Dashboard and Borrower-register screens shipped; loan origination and repayments in progress) stays private.",
     tech: ["React", "TypeScript", "Supabase / PostgreSQL", "PL/pgSQL", "Claude Code"],
-    link: {
-      label: "View sanitized schema on GitHub",
-      href: "https://github.com/bkcodes255/microfinance-data-migration-demo",
-    },
+    links: [
+      {
+        label: "View sanitized schema on GitHub",
+        href: "https://github.com/bkcodes255/microfinance-data-migration-demo",
+      },
+    ],
     story: [
       {
         label: "The problem",
@@ -123,10 +125,12 @@ export const projects: Project[] = [
       { label: "Goal", value: "C_TS4FI certification" },
     ],
     tech: ["SAP S/4HANA 2023", "FI Customizing (IMG)"],
-    link: {
-      label: "View configuration log",
-      href: "/work/sap-fi-configuration",
-    },
+    links: [
+      {
+        label: "View configuration log",
+        href: "/work/sap-fi-configuration",
+      },
+    ],
   },
   {
     code: "ENTRY-FPL",
@@ -143,18 +147,28 @@ export const projects: Project[] = [
     detail:
       "Backtested on the full 2025-26 season: the decision engine beat a static squad by 346 points — more than perfect weekly captaincy alone would have gained.",
     tech: ["Python", "PostgreSQL", "XGBoost", "PuLP", "Streamlit", "Claude Code"],
-    link: {
-      label: "View on GitHub",
-      href: "https://github.com/bkcodes255/fergies-regression",
-    },
+    links: [
+      {
+        label: "Try the live dashboard",
+        href: "https://fergiesregression.streamlit.app/",
+      },
+      {
+        label: "View on GitHub",
+        href: "https://github.com/bkcodes255/fergies-regression",
+      },
+    ],
     story: [
+      {
+        label: "The name",
+        text: "Manchester United, through and through — Sir Alex Ferguson is the standard I measure every manager against: 38 trophies in 26 years, three different title-winning sides rebuilt without ever losing the plot. \"Fergie's Regression\" is a straight tribute to him, attached to a project trying to bring some of that same discipline to a game most people just play on vibes.",
+      },
       {
         label: "The problem",
         text: "Every Fantasy Premier League decision — who to captain, who to transfer, when to take a hit — was getting made on vibes. A few seasons of finishing mid-table made it obvious gut instinct wasn't beating the noise.",
       },
       {
         label: "Why it mattered",
-        text: "I've followed the Premier League since I was a kid, and FPL turned that into a weekly competition against friends. I wanted to know, for real, whether a disciplined model-driven process could beat instinct over a full season — not on a holdout set, against the actual 2025-26 fixtures.",
+        text: "This is a passion project, not a job for anyone — I've followed the Premier League since I was a kid, and FPL turned that into a weekly competition against friends. The real goal is using data analytics and machine learning to get genuinely good at predictive analytics: build a model that predicts player performance with as little margin of error as realistically achievable, then prove it by seeing whether a disciplined model-driven process could beat instinct over a full season — not on a holdout set, against the actual 2025-26 fixtures.",
       },
       {
         label: "The approach",
