@@ -51,6 +51,7 @@ export const experience = [
 export const links = {
   email: "briankileo@gmail.com",
   linkedin: "https://www.linkedin.com/in/briankileo",
+  resume: "/resume.pdf",
 };
 
 export type ProjectStatus = "VERIFIED" | "AUDITED" | "IN PROGRESS";

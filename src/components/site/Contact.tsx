@@ -28,6 +28,13 @@ export function Contact() {
         >
           linkedin.com/in/briankileo
         </a>
+        <a
+          href={links.resume}
+          download
+          className="font-medium underline decoration-rule underline-offset-4 hover:decoration-foreground"
+        >
+          Download resume (PDF)
+        </a>
       </p>
       <p className="mt-6 max-w-2xl text-sm text-ink-soft">
         Authorized to work in the U.S. on F-1 OPT (effective July 2026),
