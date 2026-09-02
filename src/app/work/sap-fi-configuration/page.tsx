@@ -31,10 +31,11 @@ export default function SapConfigPage() {
         S/4HANA FI Configuration Log
       </h1>
       <p className="mt-4 max-w-2xl text-ink-soft">
-        This is a training-system config log, not a production build — exercises
-        completed in SAP&apos;s S4F12 course (Customizing FI: GL, AP, AR) on a
-        practice tenant, toward the SAP Certified Associate exam (C_TS4FI). Each
-        row is a real exercise: the T-code and what got configured.
+        Configuration exercises worked through in a SAP S/4HANA 2023 practice
+        tenant, on the S4F12 track (Customizing FI: GL, AP, AR) toward the SAP
+        Certified Associate exam (C_TS4FI). This is a training-system log, not
+        a production build. Each row is a real exercise: the T-code and what
+        got configured.
       </p>
 
       <dl className="mt-6 space-y-2 border-y border-rule py-4">
@@ -52,7 +53,9 @@ export default function SapConfigPage() {
       </dl>
 
       <div className="mt-10 space-y-10">
-        {sapConfigLog.map((unit) => (
+        {sapConfigLog
+          .filter((unit) => unit.entries.some((e) => e.done))
+          .map((unit) => (
           <section key={unit.unit}>
             <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-rule pb-2">
               <h2 className="font-heading text-lg font-bold tracking-tight">
@@ -67,7 +70,7 @@ export default function SapConfigPage() {
                 <col />
               </colgroup>
               <tbody>
-                {unit.entries.map((entry) => (
+                {unit.entries.filter((e) => e.done).map((entry) => (
                   <tr key={entry.ex} className="border-b border-rule last:border-0">
                     <td className="py-2 pr-2 align-top font-mono text-xs text-ink-soft tabular-figures">
                       {entry.ex}
@@ -113,6 +116,30 @@ export default function SapConfigPage() {
           </section>
         ))}
       </div>
+
+      <section className="mt-12">
+        <h2 className="font-heading text-lg font-bold tracking-tight border-b border-rule pb-2">
+          Still ahead on S4F12
+        </h2>
+        <p className="mt-3 text-sm text-ink-soft">
+          Not yet run. Listed so the scope of the module is visible, and this
+          page gets updated as each one is completed.
+        </p>
+        <ul className="mt-4 space-y-1.5 text-sm text-ink-soft">
+          {sapConfigLog.flatMap((unit) =>
+            unit.entries
+              .filter((e) => !e.done)
+              .map((entry) => (
+                <li key={entry.ex} className="flex gap-3">
+                  <span className="font-mono text-xs tabular-figures pt-0.5 w-6 shrink-0">
+                    {entry.ex}
+                  </span>
+                  <span>{entry.config}</span>
+                </li>
+              ))
+          )}
+        </ul>
+      </section>
     </main>
   );
 }

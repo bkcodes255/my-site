@@ -83,10 +83,11 @@ export const projects: Project[] = [
       { label: "Schema", value: "23 tables, 6 domains" },
       { label: "Loan classification", value: "BOT 5-bucket" },
       { label: "Access control", value: "RLS by role" },
+      { label: "Engagement", value: "independent build" },
     ],
     detail:
-      "This repo covers only the schema, migration, and reporting layer: synthetic data, no production code. The live webapp (Dashboard and Borrower-register screens shipped; loan origination and repayments in progress) stays private.",
-    tech: ["React", "TypeScript", "Supabase / PostgreSQL", "PL/pgSQL", "Claude Code"],
+      "An independent systems build, not a consulting engagement or a staff role. This repo covers only the schema, migration, and reporting layer: synthetic data, no production code. The live webapp (Dashboard and Borrower-register screens shipped; loan origination and repayments in progress) stays private.",
+    tech: ["React", "TypeScript", "Supabase / PostgreSQL", "PL/pgSQL", "Row-Level Security"],
     links: [
       {
         label: "View sanitized schema on GitHub",
@@ -117,12 +118,12 @@ export const projects: Project[] = [
     title: "S/4HANA FI Configuration",
     status: "IN PROGRESS",
     summary:
-      "Structured configuration notes across SAP's FI customizing path: company codes, master data governance, document control, posting control, and clearing. I wrote them while working through S4F10 (Business Processes in Financial Accounting) and S4F12 (Customizing FI: General Ledger, Accounts Payable, Accounts Receivable) toward the SAP Certified Associate exam (C_TS4FI).",
+      "A running configuration log from SAP S/4HANA 2023: company codes, ledgers and fiscal year variants, G/L and cost-center master data, Business Partner and CVI setup. Each entry records the transaction code, what got configured, and screenshots of the system state. Part of the S4F12 track toward the C_TS4FI certification exam.",
     stats: [
+      { label: "Org structure", value: "company codes, ledgers, FYVs" },
+      { label: "Master data", value: "G/L groups, cost centers, BP / CVI" },
       { label: "S4F10", value: "complete" },
-      { label: "S4F12", value: "in progress, 6 units / 28 exercises" },
-      { label: "S4F13", value: "next" },
-      { label: "Goal", value: "C_TS4FI certification" },
+      { label: "S4F12", value: "in progress" },
     ],
     tech: ["SAP S/4HANA 2023", "FI Customizing (IMG)"],
     links: [
@@ -146,7 +147,7 @@ export const projects: Project[] = [
     ],
     detail:
       "Backtested on the full 2025-26 season: the decision engine beat a static squad by 346 points, more than perfect weekly captaincy alone would have gained.",
-    tech: ["Python", "PostgreSQL", "XGBoost", "PuLP", "Streamlit", "Claude Code"],
+    tech: ["Python", "PostgreSQL", "XGBoost", "PuLP", "Streamlit"],
     links: [
       {
         label: "Try the live dashboard",
@@ -206,7 +207,7 @@ export const sapConfigLog = [
     unit: "Unit 1 — SAP S/4HANA Overview",
     weeks: "Week 1 · Exercise 1",
     entries: [
-      { ex: 1, tcode: "—", config: "Navigated the Fiori Launchpad (tiles, spaces, pages, fact sheets)" },
+      { ex: 1, done: true, tcode: "—", config: "Navigated the Fiori Launchpad (tiles, spaces, pages, fact sheets)" },
     ],
   },
   {
@@ -214,7 +215,7 @@ export const sapConfigLog = [
     weeks: "Week 2 · Exercises 2–6",
     entries: [
       {
-        ex: 2,
+        ex: 2, done: true,
         tcode: "OX02",
         config: "Created company codes GR98 and BK98 by copying template TA00",
         screenshots: [
@@ -223,7 +224,7 @@ export const sapConfigLog = [
         ],
       },
       {
-        ex: 3,
+        ex: 3, done: true,
         tcode: "OBY6",
         config: "Assigned Company IDs (GE98, 1998) and displayed global parameters",
         screenshots: [
@@ -232,7 +233,7 @@ export const sapConfigLog = [
         ],
       },
       {
-        ex: 4,
+        ex: 4, done: true,
         tcode: "—",
         config: "Assigned company codes GR98/BK98 to controlling area A000",
         screenshots: [
@@ -240,7 +241,7 @@ export const sapConfigLog = [
         ],
       },
       {
-        ex: 5,
+        ex: 5, done: true,
         tcode: "—",
         config: "Checked leading-ledger settings and per-company-code ledger activation",
         screenshots: [
@@ -250,7 +251,7 @@ export const sapConfigLog = [
         ],
       },
       {
-        ex: 6,
+        ex: 6, done: true,
         tcode: "OB29",
         config: "Created a calendar fiscal year variant (12+4 periods) and a non-calendar variant (4+1 periods, Apr–Mar)",
         screenshots: [
@@ -266,7 +267,7 @@ export const sapConfigLog = [
     weeks: "Week 3 · Exercises 7–11",
     entries: [
       {
-        ex: 7,
+        ex: 7, done: true,
         tcode: "OBD4",
         config: "Created G/L account groups (AE98, CD98) and G/L accounts with company-code segments",
         screenshots: [
@@ -276,7 +277,7 @@ export const sapConfigLog = [
         ],
       },
       {
-        ex: 8,
+        ex: 8, done: true,
         tcode: "KS01",
         config: "Created a segment (SE98), profit center (PR98), and cost center (COCE98)",
         screenshots: [
@@ -287,7 +288,7 @@ export const sapConfigLog = [
         ],
       },
       {
-        ex: 9,
+        ex: 9, done: true,
         tcode: "BP",
         config: "Set up Business Partner groupings, customer account groups, and CVI sync (heaviest exercise)",
         screenshots: [
@@ -296,43 +297,43 @@ export const sapConfigLog = [
           { src: "/work/sap-proof/ex9-3-customer-acc-group.webp", caption: "Creating the customer account group + number range" },
         ],
       },
-      { ex: 10, tcode: "—", config: "Created customer/vendor Business Partners and configured field status" },
-      { ex: 11, tcode: "—", config: "Configured sensitive-field dual control on Business Partner records" },
+      { ex: 10, done: false, tcode: "—", config: "Created customer/vendor Business Partners and configured field status" },
+      { ex: 11, done: false, tcode: "—", config: "Configured sensitive-field dual control on Business Partner records" },
     ],
   },
   {
     unit: "Unit 4 — Document Control",
     weeks: "Week 4 · Exercises 12–17",
     entries: [
-      { ex: 12, tcode: "FBN1", config: "Defined number ranges and a document type" },
-      { ex: 13, tcode: "—", config: "Classified the document type for document splitting" },
-      { ex: 14, tcode: "—", config: "Created a field status group and assigned it to a G/L account" },
-      { ex: 15, tcode: "OB52", config: "Maintained posting period variants" },
-      { ex: 16, tcode: "—", config: "Created a tolerance group and assigned it to a user" },
-      { ex: 17, tcode: "—", config: "Posted simple FI documents" },
+      { ex: 12, done: false, tcode: "FBN1", config: "Defined number ranges and a document type" },
+      { ex: 13, done: false, tcode: "—", config: "Classified the document type for document splitting" },
+      { ex: 14, done: false, tcode: "—", config: "Created a field status group and assigned it to a G/L account" },
+      { ex: 15, done: false, tcode: "OB52", config: "Maintained posting period variants" },
+      { ex: 16, done: false, tcode: "—", config: "Created a tolerance group and assigned it to a user" },
+      { ex: 17, done: false, tcode: "—", config: "Posted simple FI documents" },
     ],
   },
   {
     unit: "Unit 5 — Posting Control",
     weeks: "Week 5 · Exercises 18–25 (heaviest unit)",
     entries: [
-      { ex: 18, tcode: "—", config: "Posted a document with document splitting active" },
-      { ex: 19, tcode: "—", config: "Maintained default values for document entry" },
-      { ex: 20, tcode: "—", config: "Set change control on a field" },
-      { ex: 21, tcode: "FB08", config: "Reversed a posted document" },
-      { ex: 22, tcode: "—", config: "Configured payment terms" },
-      { ex: 23, tcode: "FTXP", config: "Created a tax code and posted a customer invoice with tax" },
-      { ex: 24, tcode: "—", config: "Configured cross-company-code transaction settings" },
-      { ex: 25, tcode: "—", config: "Posted and displayed a cross-company-code document" },
+      { ex: 18, done: false, tcode: "—", config: "Posted a document with document splitting active" },
+      { ex: 19, done: false, tcode: "—", config: "Maintained default values for document entry" },
+      { ex: 20, done: false, tcode: "—", config: "Set change control on a field" },
+      { ex: 21, done: false, tcode: "FB08", config: "Reversed a posted document" },
+      { ex: 22, done: false, tcode: "—", config: "Configured payment terms" },
+      { ex: 23, done: false, tcode: "FTXP", config: "Created a tax code and posted a customer invoice with tax" },
+      { ex: 24, done: false, tcode: "—", config: "Configured cross-company-code transaction settings" },
+      { ex: 25, done: false, tcode: "—", config: "Posted and displayed a cross-company-code document" },
     ],
   },
   {
     unit: "Unit 6 — Financial Document Clearing",
     weeks: "Week 6 · Exercises 26–28",
     entries: [
-      { ex: 26, tcode: "F-03", config: "Cleared an account" },
-      { ex: 27, tcode: "F-04", config: "Posted a document with clearing" },
-      { ex: 28, tcode: "—", config: "Managed payment differences" },
+      { ex: 26, done: false, tcode: "F-03", config: "Cleared an account" },
+      { ex: 27, done: false, tcode: "F-04", config: "Posted a document with clearing" },
+      { ex: 28, done: false, tcode: "—", config: "Managed payment differences" },
     ],
   },
 ] as const;
